@@ -1,0 +1,20 @@
+<h2>New Event</h2>
+<%= form_with model: @event do |form| %>
+    <div>
+        <%= form.label :Name %>
+        <%= form.text_field :name, minlength: 7%>
+    </div>
+
+    <div>
+        <%= form.label :Location %>
+        <%= form.text_field :location %>
+    </div>
+
+    <div>
+        <%= form.label :Date%>
+        <%= form.date_field :date, min: Date.today %>
+    </div>
+   
+    <%= form.submit value: "create event"%>
+<% end %>
+<%= link_to "Back", :back%>

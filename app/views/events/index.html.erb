@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
     <h1>Greetings <%= current_user.username%>! <h2>
-    <h2>Here are all the listed events</h2>
+    <h2>Here are all the events</h2>
     <%= link_to "New Event", new_event_path%>
  <% else %>
     <p>sign in or sign up to view the events</p>
@@ -13,6 +13,7 @@
                 <% if current_user == event.creator %>
                     <li>
                         <%= event.name %>
+                        <%= link_to "more details", event_path(event)%>
                     </li>
                 <% end %>
             <% end %>
